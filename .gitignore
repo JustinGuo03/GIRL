@@ -1,0 +1,35 @@
+# IDE Support: VS Code
+.vscode
+
+# IDE Support: IntelliJ & Illuminated Cloud
+.project
+.idea
+docman.iml
+IlluminatedCloud
+.settings
+.history/*
+
+# JS Test Support
+.grunt
+_SpecRunner.html
+node_modules
+spec/lib/DocMan
+spec/lib/llc_web_ui/*
+spec/lib/__MACOSX/*
+scripts/npm/lwc-mappings.json
+
+# Miscellaneous
+debug/*
+Referenced\ Packages/
+**/.DS_Store
+apex-unit-tests.xml
+build.xml
+
+#soa sdk
+**/sdk-modules/**
+
+# Test Suites
+config/testSuites/
+
+# python
+*.pyc
