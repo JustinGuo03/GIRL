@@ -26,6 +26,10 @@ app.get('/contact', (req,res) => {
     res.sendFile(__dirname + '/public/html/contact.html');
 })
 
+app.get('/login', (req,res) => {
+    res.sendFile(__dirname + '/public/html/login.html');
+})
+
 app.post('/form_submit', (req,res) => {
     const username = req.body.username;
     const password = req.body.password;
