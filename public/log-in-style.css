@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('/images/joy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: white;
+    background-size: 100%;
+    z-index: 100;
+    margin: -1em 0em 1em;
+    top: 1em;
+}
+
+header img {
+    width: auto;
+    height: 90px;
+    padding: 1em
+}
+
+.white {
+    background-color: white;
+}
+
+.center-div {
+    padding-top: 10%;
+}
+
+.butn.btun-success {
+    padding: .4em .2em;
+}
+
+form {
+    padding: 0em 3em;
+}
+
+#login .title > span {
+    font-size: 0.8em;
+}
+
+.form-group {
+    margin: 0 0 1em;
+}
