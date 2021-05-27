@@ -21,6 +21,10 @@ img {
     margin: 0 auto;
 }
 
+.white {
+    background-color: white;
+}
+
 section::after,
 footer::after {
     content: '';
@@ -60,6 +64,10 @@ footer::after {
 .title span {
     font-weight: 200;
     display: block;
+}
+
+.title-space {
+    margin: 6em 0 1em;
 }
 
 .unstyled-list {
@@ -118,7 +126,8 @@ header {
 header img {
     width: auto;
     height: 90px;
-    padding: 1em
+    padding: 1em;
+    margin-left: 0.5em;
 }
 
 nav ul {
@@ -267,6 +276,34 @@ nav {
 
 .skills {
     margin: 6em 0;
+}
+
+.dashboard {
+    background-image: url('/assets/joy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5em 0 0;
+}
+
+.center-div {
+    padding-top: 10%;
+    padding-bottom: 25%;
+}
+
+.butn.btun-success {
+    padding: .4em .2em;
+}
+
+form {
+    padding: 0em 3em;
+}
+
+#login .title > span {
+    font-size: 0.8em;
+}
+
+.form-group {
+    margin: 0 0 1em;
 }
 
 

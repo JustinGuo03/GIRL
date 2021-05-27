@@ -1,0 +1,11 @@
+<%- include('header') -%>
+
+<div class="text-center center-div dashboard" id="login">
+    <div class="container w-25 border py-5 white">
+        <h3>Welcome to Gaming IRL Dashboard</h3>
+        <h5><%= locals.user ? user:"User" %></h5>
+        <a href="/route/logout">Logout</a>
+    </div>
+</div>
+
+<%- include('footer') -%>

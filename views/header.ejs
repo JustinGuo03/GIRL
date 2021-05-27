@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Gaming IRL</title>
+        <link rel="stylesheet" href="/static/styles.css" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    </head>
+    
+    <body>
+        
+    <header>
+        <a href="/"><img src="/assets/girl.jpg" alt="GIRL Logo" class="logo"></a>
+        <!-- <a href="/"><img src="/assets/irl.jpg" alt="GIRL Logo" class="logo"></a> -->
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/softskills">Soft Skills</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href=<%= locals.user ? "/route/dashboard":"/login" %>>
+                    <%= locals.user ? user:"Register/Log In" %>
+                </a></li>
+            </ul>
+        </nav>
+
+        <% if(locals.logout){ %>
+            <div class="alter alert-success text-center">
+                <%= logout %>
+            </div>
+        <% } %>
+    </header>
