@@ -3,6 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Gaming IRL</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="/static/dropdown.js"></script>
+
+        <link rel="stylesheet" href="/static/dropdown.css">
         <link rel="stylesheet" href="/static/styles.css" type="text/css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     </head>
@@ -19,14 +25,26 @@
                 <li><a href="/aboutus">About Us</a></li>
                 <li><a href="/softskills">Soft Skills</a></li>
                 <li><a href="/contact">Contact</a></li>
-                <li><a href=<%= locals.user ? "/route/dashboard":"/login" %>>
-                    <%= locals.user ? user:"Register/Log In" %>
-                </a></li>
+                    <!--<li><a href=<%= locals.user ? "/route/dashboard":"/login" %>>
+                        <%= locals.user ? user:"Register/Log In" %>
+                    </a></li> -->
+                <% if(locals.user){ %>
+                    <li><div class="dropdown">
+                        <button onclick="dropdown()" class="dropbtn">Hello, <%= user %></button>
+                    </div></li>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="/route/dashboard">Dashboard</a>
+                        <a href="/route/logout">Logout</a>
+                    </div>
+                <% }else{ %>
+                    <li><a href="/login">Register/Log In</a></li>
+                <% } %>
             </ul>
         </nav>
 
         <% if(locals.logout){ %>
-            <div class="alter alert-success text-center">
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <%= logout %>
             </div>
         <% } %>
