@@ -246,6 +246,26 @@ nav {
     margin-left: 1em;
 }
 
+.aboutus-prog {
+    background-image: url(images/learngame.jpg);
+    padding: 10.5em 0; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.aboutus-prog-text {
+    top: 10em;
+    background-color: white;
+    z-index: 95;
+    width: 34%;
+    border: 5px solid black;
+    padding: 1em;
+    margin-left: 1em;
+}
+
 /* team page */
 
 .team-title {
