@@ -10,13 +10,12 @@
 <body>
         
     <header>
-        <a href="/"><img src="/assets/gaming.jpg" alt="GIRL Logo" class="logo"></a>
-        <a href="/"><img src="/assets/irl.jpg" alt="GIRL Logo" class="logo"></a>
+        <a href="/"><img src="/assets/girl.jpg" alt="GIRL Logo" class="logo"></a>
     </header>
 
     <div class="text-center center-div" id="login">
         <div class="container w-25 border py-5 white">
-            <div class="title pb-5">
+            <div class="title pb-5 title-close">
                 <h2 class="font-weight-bold">Log In</h2>
                 <% if(locals.failed){ %>
                     <div class="alert alert-warning text-center">
@@ -36,7 +35,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <small class="form-text text-muted text-left">Don't have an account? <a href="">Register</a></small>
+                    <small class="form-text text-muted text-left">Don't have an account? <a href="/register">Register</a></small>
                 </div>
 
                 <button type="submit" class="btn btn-success">Submit</button>

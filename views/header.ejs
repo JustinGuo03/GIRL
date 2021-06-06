@@ -24,7 +24,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/aboutus">About Us</a></li>
                 <li><a href="/softskills">Soft Skills</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/team">Our Team</a></li>
                     <!--<li><a href=<%= locals.user ? "/route/dashboard":"/login" %>>
                         <%= locals.user ? user:"Register/Log In" %>
                     </a></li> -->
@@ -37,15 +37,12 @@
                         <a href="/route/logout">Logout</a>
                     </div>
                 <% }else{ %>
-                    <li><a href="/login">Register/Log In</a></li>
+                    <li>
+                        <a href="/register">Register</a>
+                        <strong>/</strong>
+                        <a href="/login">Log In</a>
+                    </li>
                 <% } %>
             </ul>
         </nav>
-
-        <% if(locals.logout){ %>
-            <div class="alert alert-success alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <%= logout %>
-            </div>
-        <% } %>
     </header>

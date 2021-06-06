@@ -156,6 +156,12 @@ nav a:focus {
     color: #DDD;
 }
 
+.right-side {
+    left: 0;
+    float: left;
+    text-decoration: none;
+}
+
 @media (min-width: 60rem) {
     .logo {
         float: left;
@@ -166,6 +172,7 @@ nav {
     float: right;
 }
 
+/* home page */
 .home-hero {
     background-image: url(images/brain.jpg);
     padding: 10em 0;
@@ -206,18 +213,54 @@ nav {
     padding: 0 0.25em;
 }
 
-
+/* about us page */
 
 .aboutus-title {
-    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("images/savannah.jpg");
-    padding: 10em 0;
+    background-image: url(images/chalkboard.jpg);
+    padding: 15em 0; 
+    color: white;
+    background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    background-size: 97%;
-    margin: 6em 1em 1em;
+    background-size: 100%;
+    margin: 6em 0em 1em;
+    text-align: center;
+    border: 5px solid sienna;
+}
+
+.aboutus-desc {
+    background-image: url(images/classroom.jpg);
+    padding: 10.5em 0; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    text-align: center;
+}
+
+.aboutus-desc-text {
+    top: 10em;
+    background-color: white;
+    z-index: 95;
+    width: 32%;
+    border: 5px solid black;
+    padding: 1em;
+    margin-left: 1em;
+}
+
+/* team page */
+
+.team-title {
+    background-image: url(images/savannah.jpg);
+    padding: 22em 0;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: auto;
+    margin: 6em 0em 0em;
+    text-align: center;
 } 
 
-.aboutus-title h1 {
+.team-title h1 {
     margin-bottom: -10em;
     margin-top: 1em;
     z-index: 90;
@@ -226,6 +269,7 @@ nav {
 .portfolio {
     margin: 1em 0 0;
     text-align: center;
+    background-color: #343725;
 }
 
 .port-item {
@@ -278,6 +322,8 @@ nav {
     margin: 6em 0;
 }
 
+/* dashboard */
+
 .dashboard {
     background-image: url('/assets/joy.jpg');
     background-size: cover;
@@ -306,6 +352,48 @@ form {
     margin: 0 0 1em;
 }
 
+/* soft skills page */
+.skill-title {
+    background-image: url(images/brain.jpg);
+    padding: 8em 0;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin: 6em 0em 0em;
+    text-align: center;
+}
+
+.skill-desc {
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 18%;
+    text-align: center;
+}
+
+.skill-div img {
+    margin: -2em 1em 1;
+    text-align: center;
+    position: relative;
+    top: -2em;
+    margin-right: 1em;
+}
+
+.skill-div a {
+    color: white;
+}
+
+.skill-div {
+    color: white;
+    padding: 1em;
+}
+
+.softskills {
+    background: #48b2c2;
+    margin: 2em 0em 0em;
+    bottom: 0em;
+}
 
 /* footer stuff */
 footer {
@@ -313,5 +401,10 @@ footer {
     color: white;
     text-align: center;
     padding: 5em 0;
+}
+
+footer a {
+    color: lightskyblue;
+    text-decoration: none;
 }
 

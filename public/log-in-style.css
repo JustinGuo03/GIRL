@@ -45,5 +45,9 @@ form {
 }
 
 .form-group {
-    margin: 0 0 1em;
+    margin: 0em 0 1em;
+}
+
+.title-close {
+    margin-bottom: -2.5em;
 }
