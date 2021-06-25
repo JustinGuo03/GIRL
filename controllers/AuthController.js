@@ -1,6 +1,8 @@
 const User      = require('../models/User')
 const bcrypt    = require('bcryptjs')
 const jwt       = require('jsonwebtoken')
+const nodemailer= require('nodemailer')
+require('dotenv').config()
 
 //registers users
 const register = (req,res,next) => {
@@ -62,11 +64,46 @@ const login = (req,res,next) => {
                 }
             })
         }else{
-            res.render('login',{failed: "User not found"});
+            res.render('login', {failed: "User not found"});
+        }
+    })
+}
+
+const sendEmail = (req, res, next) => {
+    var email = req.body.email
+    User.findOne({$or: [{email:email}, {phone:email}]})
+    .then(user => {
+        if(user) {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    type: 'OAuth2',
+                    user: process.env.MAIL_USERNAME,
+                    pass: process.env.MAIL_PASSWORD,
+                    clientId: process.env.OAUTH_CLIENTID,
+                    clientSecret: process.env.OAUTH_CLIENT_SECRET,
+                    refreshToken: process.env.OAUTH_REFRESH_TOKEN
+                }
+            });
+
+            const mailOptions = {
+                from: 'gaminginirl@gmail.com',
+                to: req.body.email,
+                subject: 'Reset Password for Gaming IRL',
+                html: '<h1>Reset your password by clicking the link below!</h1><a href="http://localhost:3000/route/resetpass">Reset Password</a>'
+            };
+
+            transporter.sendMail(mailOptions, function(error, info){
+                if (error) {
+                console.log(error);
+                } else {
+                res.redirect('/route/emailsent');
+                }
+            });
         }
     })
 }
 
 module.exports = {
-    register, login
+    register, login, sendEmail
 }

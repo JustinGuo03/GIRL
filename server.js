@@ -8,7 +8,7 @@ const {v4: uuidv4}  = require('uuid');
 
 const router        = require('./router');
 
-mongoose.connect('mongodb://localhost:27017/accountsdb', {useNewUrlPaser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/accountsdb', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection
 db.on('error', (err) => {
     console.log(err)
@@ -66,6 +66,11 @@ app.get('/login', (req,res) => {
 //register route
 app.get('/register', (req,res) => {
     res.render('register');
+})
+
+//send password reset email route
+app.get('/sendemail', (req,res) => {
+    res.render('sendemail');
 })
 
 const PORT = 3000;

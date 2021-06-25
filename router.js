@@ -1,11 +1,12 @@
-const express = require('express');
-const router = express.Router();
+const express   = require('express');
+const router    = express.Router();
 const User      = require('./models/User')
 
 const AuthController = require('./controllers/AuthController')
 
 router.post('/registration', AuthController.register)
 router.post('/account', AuthController.login)
+router.post('/confirm', AuthController.sendEmail)
 
 // //login user
 // router.post('/account', (req,res) => {
@@ -62,6 +63,10 @@ router.get('/destroy', (req,res) => {
             }
         })
     })
+})
+
+router.get('/emailsent', (req,res) => {
+    res.render('emailsent')
 })
 
 module.exports = router;
