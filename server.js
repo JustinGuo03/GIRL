@@ -5,8 +5,12 @@ const path          = require('path');
 const bodyparser    = require('body-parser');
 const session       = require('express-session');
 const {v4: uuidv4}  = require('uuid');
+const url           = require('url')
 
 const router        = require('./router');
+const AuthController = require('./controllers/AuthController');
+const { query } = require('express');
+const { token } = require('morgan');
 
 mongoose.connect('mongodb://localhost:27017/accountsdb', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection
@@ -50,6 +54,7 @@ app.get('/softskills', (req,res) => {
 
 //aboutus route
 app.get('/aboutus', (req,res) => {
+    console.log('called aboutus');
     res.render('aboutus', {user: req.session.user});
 })
 
@@ -71,6 +76,17 @@ app.get('/register', (req,res) => {
 //send password reset email route
 app.get('/sendemail', (req,res) => {
     res.render('sendemail');
+})
+
+app.get('/passwordReset', (req,res) => {
+    let queryObject = url.parse(req.url, true).query;
+    //req.session.token = queryObject.token;
+    if(AuthController.resetPass(queryObject.token, queryObject.id)){
+        let link = '/route/reseting?id='+queryObject.id;
+        res.render('resetpass', {link: link});
+    }else{
+        res.render('invalidtoken');
+    }
 })
 
 const PORT = 3000;

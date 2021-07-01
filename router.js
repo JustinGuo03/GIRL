@@ -7,6 +7,7 @@ const AuthController = require('./controllers/AuthController')
 router.post('/registration', AuthController.register)
 router.post('/account', AuthController.login)
 router.post('/confirm', AuthController.sendEmail)
+router.post('/reseting', AuthController.reseting)
 
 // //login user
 // router.post('/account', (req,res) => {
@@ -67,6 +68,10 @@ router.get('/destroy', (req,res) => {
 
 router.get('/emailsent', (req,res) => {
     res.render('emailsent')
+})
+
+router.get('/reset', (req,res) => {
+    res.render('reset');
 })
 
 module.exports = router;

@@ -16,8 +16,8 @@
     <div class="text-center center-div" id="login">
         <div class="container w-25 border py-5 white">
             <div class="title pb-5 title-close">
-                <h2 class="font-weight-bold">Reset Password</h2>
-                <p>An email will be sent to the given email with a link to reset your password</p>
+                <h2 class="font-weight-bold">Success</h2>
+                <p>Password has been reset</p>
                 <% if(locals.failed){ %>
                     <div class="alert alert-warning text-center">
                         <%= failed %>
@@ -25,17 +25,9 @@
                 <% } %>
             </div>
 
-            <form action="/route/confirm" method="POST" class="pt-0">
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" name="email">
-                </div>
-                
-                <div class="form-group">
-                    <small class="form-text text-muted text-left">Remember your password? <a href="/login">Log In</a></small>
-                </div>
-
-                <button type="submit" class="btn btn-success">Send Email</button>
-            </form>
+            <div class="form-group">
+                <small class="form-text text-muted text-left"><a href="/login">Log In</a></small>
+            </div>
         </div>
     </div>
 
